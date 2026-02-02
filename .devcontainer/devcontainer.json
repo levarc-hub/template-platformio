@@ -10,6 +10,9 @@
     "source=${env:HOME}/.ssh,target=/home/vscode/.ssh,type=bind,consistency=cached",
     "source=${env:HOME}/.gitconfig,target=/home/vscode/.gitconfig,type=bind,consistency=cached"
   ],
+  "remoteEnv": {
+    "SSH_AUTH_SOCK": "/ssh-agent"
+  },
   "runArgs": [
     "--privileged"
   ],
