@@ -1,5 +1,7 @@
 # PlatformIO devcontainer
 
+[PlatformIO home page](https://platformio.org/)
+
 ## Useful PlatformIO commands
 
 ```sh
@@ -10,7 +12,7 @@ pio device list
 pio device monitor
 ```
 
-## USBIPD
+## USBIPD setup
 
 ```sh
 # open PowerShell with admin access

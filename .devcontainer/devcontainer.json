@@ -1,9 +1,18 @@
 {
   "name": "PlatformIO Embedded",
   "build": {
-    "dockerfile": "Dockerfile"
+    "dockerfile": "Dockerfile",
+    "context": ".."
   },
   "remoteUser": "vscode",
+  "mounts": [
+    "source=/run/host-services/ssh-auth.sock,target=/ssh-agent,type=bind",
+    "source=${env:HOME}/.ssh,target=/home/vscode/.ssh,type=bind,consistency=cached",
+    "source=${env:HOME}/.gitconfig,target=/home/vscode/.gitconfig,type=bind,consistency=cached"
+  ],
+  "runArgs": [
+    "--privileged"
+  ],
   "customizations": {
     "vscode": {
       "extensions": [
@@ -15,6 +24,7 @@
         "eamodio.gitlens",
         "redhat.vscode-yaml",
         "christian-kohler.path-intellisense",
+        "tamasfe.even-better-toml"
       ],
       "settings": {
         "terminal.integrated.defaultProfile.linux": "bash",
@@ -22,13 +32,5 @@
       }
     }
   },
-  "mounts": [
-    "source=/run/host-services/ssh-auth.sock,target=/ssh-agent,type=bind",
-    "source=${env:HOME}/.ssh,target=/home/vscode/.ssh,type=bind,consistency=cached",
-    "source=${env:HOME}/.gitconfig,target=/home/vscode/.gitconfig,type=bind,consistency=cached"
-  ],
-  "runArgs": [
-    "--privileged"
-  ],
-  "postCreateCommand": "platformio --version && ./scripts/bootstrap.sh"
+  "postCreateCommand": "./scripts/bootstrap.sh"
 }

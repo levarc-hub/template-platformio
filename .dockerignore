@@ -1,0 +1,6 @@
+.git
+.pio
+.platformio
+.vscode
+__pycache__
+.venv
