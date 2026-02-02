@@ -1,0 +1,22 @@
+// .vscode/settings.json
+{
+  "yaml.validate": true,
+  "yaml.format.enable": true,
+  "yaml.schemas": {},
+  "yaml.customTags": [],
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": [
+    "source.organizeImports",
+    "source.fixAll"
+  ],
+  // 🔍 GitLens
+  "gitlens.defaultDateFormat": "YYYY-MM-DD",
+  "gitlens.defaultTimeFormat": "HH:mm",
+  "gitlens.hovers.enabled": true,
+  "gitlens.codeLens.enabled": true,
+  "gitlens.currentLine.enabled": true,
+  "gitlens.statusBar.enabled": true,
+  // 📁 Path Intellisense
+  "path-intellisense.autoSlashAfterDirectory": true,
+  "path-intellisense.extensionOnImport": true,
+}
